@@ -1,22 +1,27 @@
 import './App.css'
 
-import React from 'react'
+import React, { Component} from 'react'
 
-class App extends React.Component {
-  state = {
-    timesClicked: 0
+class App extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {timesClicked: 0}
   }
+  
 
-  handleClick() {
+  
+  
+  handleClick = () =>{
     this.setState({ timesClicked: this.state.timesClicked + 1 })
   }
+  
+  
+    render() {
 
-  render() {
-    const { timesClicked } = this.state
-
-    return (
-      <>
-        <p>You've clicked it {timesClicked} times</p>
+      
+      return (
+        <>
+        <p>You've clicked it {this.state.timesClicked} times</p>
         <button onClick={this.handleClick}>click me!</button>
       </>
     )
